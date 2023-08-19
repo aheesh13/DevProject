@@ -1,13 +1,13 @@
-package com.bus.redbus;
+package com.movie.bookticket;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RedbusApplication {
+public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RedbusApplication.class, args);
+		SpringApplication.run(DemoApplication.class, args);
 	}
 
 }
