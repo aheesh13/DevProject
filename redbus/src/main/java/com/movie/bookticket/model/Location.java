@@ -24,7 +24,18 @@ public class Location {
     @Column(name = "address")
     private String address;
     
-    public Long getId() {
+    @Column(name = "pincode")
+    private int pincode;
+    
+    public int getPincode() {
+		return pincode;
+	}
+
+	public void setPincode(int pincode) {
+		this.pincode = pincode;
+	}
+
+	public Long getId() {
 		return id;
 	}
 
