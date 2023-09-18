@@ -18,11 +18,8 @@ public class Location {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "city")
+    @Column(name = "city",unique = true)
     private String city;
-
-    @Column(name = "address")
-    private String address;
     
     @Column(name = "pincode")
     private int pincode;
@@ -51,11 +48,4 @@ public class Location {
 		this.city = city;
 	}
 
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
 }

@@ -17,6 +17,14 @@ public class Theater {
     @Column(name = "id")
     private Long id;
 
+	@Column(name = "name")
+    private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "location_id")
+    private Location location;
+
+    
     public Long getId() {
 		return id;
 	}
@@ -42,24 +50,5 @@ public class Theater {
 	}
 
 	
-
-	@Column(name = "name")
-    private String name;
-
-    @ManyToOne
-    @JoinColumn(name = "location_id")
-    private Location location;
-
-    @Column(name = "number_of_screens")
-    private int noOfScreens;
-
-	public int getNoOfScreens() {
-		return noOfScreens;
-	}
-
-	public void setNoOfScreens(int noOfScreens) {
-		this.noOfScreens = noOfScreens;
-	}
-    
     // Getters, setters, and other methods...
 }

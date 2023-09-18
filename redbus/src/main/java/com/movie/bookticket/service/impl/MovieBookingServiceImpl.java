@@ -6,7 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.movie.bookticket.model.Movie;
 import com.movie.bookticket.model.Screening;
+import com.movie.bookticket.model.Theater;
 import com.movie.bookticket.repository.ScreeningRepository;
 
 @Service
@@ -14,9 +16,6 @@ public class MovieBookingServiceImpl {
     @Autowired
     private ScreeningRepository screeningRepository;
 
-    public List<Screening> getAvailableScreenings(Long locationId, Date date) {
-        return screeningRepository.findByTheaterLocationIdAndDate(locationId, date);
-    }
 
     public String bookScreening(Long screeningId, int numberOfSeats) {
         Screening screening = screeningRepository.findById(screeningId).orElse(null);
@@ -27,4 +26,5 @@ public class MovieBookingServiceImpl {
         }
         return "Not enough available seats!";
     }
+
 }

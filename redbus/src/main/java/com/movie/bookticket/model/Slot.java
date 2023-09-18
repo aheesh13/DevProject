@@ -21,8 +21,36 @@ public class Slot {
 
     @Column(name = "start_time")
     private LocalTime startTime;
+    
+	@Column(name = "end_time")
+    private LocalTime endTime;
+    
+    
+    @ManyToOne
+    @JoinColumn(name = "movie_id")
+    private Movie movie;
+    
+    @ManyToOne
+    @JoinColumn(name = "screening_id")
+    private Screening screening;
 
-    public Long getId() {
+    public Screening getScreening() {
+		return screening;
+	}
+
+	public void setScreening(Screening screening) {
+		this.screening = screening;
+	}
+
+	public Movie getMovie() {
+		return movie;
+	}
+
+	public void setMovie(Movie movie) {
+		this.movie = movie;
+	}
+
+	public Long getId() {
 		return id;
 	}
 
@@ -46,8 +74,6 @@ public class Slot {
 		this.endTime = endTime;
 	}
 
-	@Column(name = "end_time")
-    private LocalTime endTime;
-    
+
     // Getters, setters, and other methods...
 }

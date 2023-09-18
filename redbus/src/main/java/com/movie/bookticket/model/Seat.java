@@ -17,18 +17,15 @@ public class Seat {
     @Column(name = "id")
     private Long id;
 
-	@Column(name = "seat_row_number")
-    private int rowNumber;
-
     @Column(name = "seat_number")
-    private int seatNumber;
+    private String seatNumber;
 
     @Column(name = "is_booked")
     private boolean isBooked;
 
     @ManyToOne
-    @JoinColumn(name = "screening_id")
-    private Screening screening;
+    @JoinColumn(name = "slot_id")
+    private Slot slot;
     
     public Long getId() {
 		return id;
@@ -38,19 +35,11 @@ public class Seat {
 		this.id = id;
 	}
 
-	public int getRowNumber() {
-		return rowNumber;
-	}
-
-	public void setRowNumber(int rowNumber) {
-		this.rowNumber = rowNumber;
-	}
-
-	public int getSeatNumber() {
+	public String getSeatNumber() {
 		return seatNumber;
 	}
 
-	public void setSeatNumber(int seatNumber) {
+	public void setSeatNumber(String seatNumber) {
 		this.seatNumber = seatNumber;
 	}
 
@@ -62,12 +51,5 @@ public class Seat {
 		this.isBooked = isBooked;
 	}
 
-	public Screening getScreening() {
-		return screening;
-	}
-
-	public void setScreening(Screening screening) {
-		this.screening = screening;
-	}
     
 }

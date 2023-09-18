@@ -4,10 +4,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-import com.movie.bookticket.model.Location;
+import com.movie.bookticket.model.Movie;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000/admin-login")
 @RepositoryRestResource
-public interface LocationRepository extends JpaRepository<Location, Long>{
+public interface MovieRepository extends JpaRepository<Movie, Long>{
 
 }
